@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useContactAPI } from '../../../../hooks/useContactAPI';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function ContactForm() {
     newsletter: false
   });
   const [message, setMessage] = useState({ text: '', type: '' });
+  const { createContact, loading } = useContactAPI();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -25,30 +27,36 @@ export default function ContactForm() {
     e.preventDefault();
     
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const result = await createContact(formData);
       
-      setMessage({ 
-        text: "✓ Message sent successfully! We'll be in touch soon.", 
-        type: 'success' 
-      });
-      
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: '',
-        newsletter: false
-      });
+      if (result.success) {
+        setMessage({ 
+          text: "✓ Message sent successfully! We'll be in touch soon.", 
+          type: 'success' 
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: '',
+          newsletter: false
+        });
 
-      // Clear message after 10 seconds
-      setTimeout(() => {
-        setMessage({ text: '', type: '' });
-      }, 10000);
+        // Clear message after 10 seconds
+        setTimeout(() => {
+          setMessage({ text: '', type: '' });
+        }, 10000);
+      } else {
+        setMessage({ 
+          text: `✗ ${result.error || 'Failed to send message. Please try again.'}`, 
+          type: 'error' 
+        });
+      }
     } catch (error) {
       setMessage({ 
         text: '✗ Failed to send message. Please try again.', 
@@ -166,8 +174,16 @@ export default function ContactForm() {
           </label>
         </div>
 
-        <button type="submit" className="btn btn-primary btn-lg btn-block pulse-btn">
-          Send Message <i className="fas fa-paper-plane"></i>
+        <button type="submit" className="btn btn-primary btn-lg btn-block pulse-btn" disabled={loading}>
+          {loading ? (
+            <>
+              <i className="fas fa-spinner fa-spin"></i> Sending...
+            </>
+          ) : (
+            <>
+              Send Message <i className="fas fa-paper-plane"></i>
+            </>
+          )}
         </button>
       </form>
 

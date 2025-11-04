@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import WhyOmnibrix from './components/WhyOmnibrix';
 import CTA from './components/CTA';
-import BlogPreview from './components/BlogPreview';
 import Footer from './components/Footer';
 
 export default function LandingPage() {
@@ -15,7 +14,6 @@ export default function LandingPage() {
         <Hero />
         <Services />
         <WhyOmnibrix />
-        <BlogPreview />
         <CTA />
       </main>
       <Footer />

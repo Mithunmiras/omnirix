@@ -38,15 +38,15 @@ export default function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
-                <i className="fab fa-github"></i>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
+                <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube">
+              {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube">
                 <i className="fab fa-youtube"></i>
-              </a>
+              </a> */}
             </div>
           </div>
 

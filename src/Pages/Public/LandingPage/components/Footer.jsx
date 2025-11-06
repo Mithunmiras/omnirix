@@ -36,9 +36,9 @@ const Footer = () => {
             </Link>
             <p className="footer-desc">Empowering businesses with AI super agents and intelligent automation solutions.</p>
             <div className="social-links">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-instagram"></i></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/omnibrix/" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/omnibrix_consulting?igsh=aHM5bmcwMHRyb2lj" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/share/1D5YQJPBBz/" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-facebook-f"></i></a>
               {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link"><i className="fab fa-youtube"></i></a> */}
             </div>
           </div>
